@@ -14,9 +14,49 @@ export default function ProfessionalRadioButton() {
   };
 
   return (
+    <>
+    <header className={styles.header}>
+        <nav className={styles.navbar}>
+          <div className={styles.logo}>
+            <img 
+              src="https://lh3.googleusercontent.com/d/18h1n-2KiEjcSf1T6XR_SzAtJkVstgiC8=s3000?authuser=0"
+              alt="Google Drive Image"
+              width="124" 
+              height="62" 
+            />
+          </div>
+          <ul className={styles.navItems}>
+          <li>
+                <a href="/">TOP</a>
+            </li>
+            <li>
+                <a href="/details/idea"  >理念</a>
+            </li>
+            <li>
+                <a href="/details/contact" className={styles.orangeLink}>お問い合わせ</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
     <div className={styles.main}>
+    <h2>お問い合わせ</h2>
+      <div className={styles.click}>
+      <a href='https://lin.ee/d5frHDH' className={styles.linkButtonBlue}>
+      LINEでのお問い合わせはこちらをクリック※おすすめ</a></div>
+      <p>または以下のQRから公式LINEを追加してください。</p>
+      <img 
+            src="https://lh3.googleusercontent.com/d/14dO4x4ZkZlkPCs8k2dL5XaTbCoU9PBWt=s1000?authuser=0"
+            alt="Google Drive Image"
+            width="200" height="200"
+          /> <br/>
+          <div className={styles.click}>
+      <a href='https://docs.google.com/forms/d/e/1FAIpQLSfI3WFAlWJezQ0YNN69Ms_tD2Qd8NAGkm_g-ACV0NnCMCBqPw/viewform?vc=0&c=0&w=1&flr=0'
+      className={styles.linkButtonBlue}>
+      お電話またはメールでのお問い合わせはこちらをクリック</a></div>
+      <p>Googleフォームのページに遷移します。<br/></p>
+
       <div className={styles.contact}>
-      <p>※お申し込み前に以下をご一読の上、お申し込み下さい。</p>
+      <p className={styles.blank}>※無料体験授業にお申し込みの方は、お申し込み前に以下をご一読の上、お申し込み下さい。</p>
       <div className={styles.enter}>
       <p>1,参加対象</p>
       <p>参加時点で小学校三年生〜高校三年生の方（下記を満たす場合その限りではありません。）</p>
@@ -52,19 +92,6 @@ export default function ProfessionalRadioButton() {
       <a href='/details/sale'>「体験授業、通常教室」特定商取引法に基づく表記</a><br/>
       <a href='/details/policy'>「ARLOGY」プライバシーポリシー</a>
       </div>
-      <h2>お問い合わせ</h2>
-      <div className={styles.click}>
-      <a href='https://lin.ee/d5frHDH'>LINEでのお問い合わせはこちらをクリック※おすすめ</a></div>
-      <p>または以下のQRから公式LINEを追加してください。</p>
-      <img 
-            src="https://lh3.googleusercontent.com/d/14dO4x4ZkZlkPCs8k2dL5XaTbCoU9PBWt=s1000?authuser=0"
-            alt="Google Drive Image"
-            width="200" height="200"
-          /> <br/>
-          <div className={styles.click}>
-      <a href='https://docs.google.com/forms/d/e/1FAIpQLSfI3WFAlWJezQ0YNN69Ms_tD2Qd8NAGkm_g-ACV0NnCMCBqPw/viewform?vc=0&c=0&w=1&flr=0'>
-      お電話またはメールでのお問い合わせはこちらをクリック</a></div>
-      <p>Googleフォームのページに遷移します。</p>
       </div>
       {/* <div className={styles.time1}>
       <p>※無料体験授業は60分程度を想定しています。<br/>（当事業の説明10~15分、 保護者様と講師とお子様でのカリキュラム体験30~40分）</p>
@@ -145,5 +172,6 @@ export default function ProfessionalRadioButton() {
               <div>TOPへ<br/>戻る</div>
             </div>
     </div>
+    </>
   );
 }

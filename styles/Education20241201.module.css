@@ -37,3 +37,33 @@
     margin-bottom: 1rem;
   }
   
+  .scrollArrow {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff4500; /* 魅力的なオレンジ色 */
+    color: #fff;
+    border-radius: 50%; /* 丸いアイコンにする */
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 軽い影で浮いているように見せる */
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000; /* 他の要素より上に表示する */
+  }
+  
+  .scrollArrow:hover {
+    background-color: #ff6347; /* 明るい色でホバーエフェクト */
+    transform: translateY(-5px); /* 少し浮かせる */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* 影を強調 */
+  }
+  
+  .scrollArrow div {
+    line-height: 1.4;
+  }

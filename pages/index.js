@@ -77,6 +77,29 @@ export default function Home() {
       setActiveIndex(activeIndex === index ? null : index);
   };
 
+
+  const [showArrow, setShowArrow] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0); // スクロール位置を管理する変数
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentPosition = window.scrollY; // 現在のスクロール位置を取得
+      setScrollPosition(currentPosition);
+  
+      if (currentPosition > 100) { // スクロール位置が100px以上の場合に矢印を表示
+        setShowArrow(true);
+      } else {
+        setShowArrow(false); // スクロール位置が100px未満の場合に矢印を非表示
+      }
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
   return (
     <>
     <Head>
@@ -108,17 +131,23 @@ export default function Home() {
       /> 
     </div>
     <ul className={styles.navItems}>
-      <li><a href="/">TOP</a></li>
-      <li><a href="/details/idea">理念</a></li>
-      <li><a href="/details/contact">お問い合わせ</a></li>
-    </ul>
+            <li>
+                <a href="/" className={styles.orangeLink}>TOP</a>
+            </li>
+            <li>
+                <a href="/details/idea">理念</a>
+            </li>
+            <li>
+                <a href="/details/contact">お問い合わせ</a>
+            </li>
+        </ul>
   </nav>
 </header>
 
       {/* ヒーローセクション */}
 <section id="hero" className={styles.hero}>
   <div className={styles.heroContent}>
-    {"詰め込み教育\nでは培われない\n能力を磨く塾\nARLOGY".split("").map((char, index) => (
+    {"日本で一番\n生徒が発言する塾\nARLOGY".split("").map((char, index) => (
       char === "\n" ? (
         <br key={index} /> /* 改行文字の場合は <br> に置き換え */
       ) : (
@@ -398,6 +427,14 @@ export default function Home() {
                     </div>
                 ))}
 </section>
+{/* 無料体験授業リンクアイコン */}
+{showArrow && (
+<div className={styles.fixedContainer}>
+            <div className={styles.fixedItem}>
+                <a href="/details/contact">💬　無料受験相談</a>
+            </div>
+        </div>
+           )}
       {/* フッター */}
       <footer className={styles.footer}>
         <p>© 2024 ARLOGY</p>

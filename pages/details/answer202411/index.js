@@ -4,6 +4,10 @@ import Head from "next/head";
 import styles from "@/styles/Education20241201.module.css";
 
 export default function Home() {
+  const router = useRouter();
+  const scrollToBottom1 = () => {
+    router.push('/');
+  };
   return (
     <div className={styles.container}>
       <Head>
@@ -81,6 +85,9 @@ export default function Home() {
           </p>
         </section>
       </main>
+      <div className={styles.scrollArrow} onClick={scrollToBottom1}>
+        <div>ホームページ<br/>TOPへ</div>
+      </div>
     </div>
   );
 }

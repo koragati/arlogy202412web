@@ -9,7 +9,6 @@
     z-index: 1000; /* 他の要素の上に配置 */
     margin-bottom: 0px;
   }
-  
   .navbar {
     display: flex; /* フレックスボックスで配置 */
     justify-content: space-between; /* 左右に要素を分ける */
@@ -45,19 +44,20 @@
     margin: 0; /* 外側の余白を消す */
     padding: 0; /* 内側の余白を消す */
   }
-  
+
   .navItems li a {
     text-decoration: none; /* リンクの下線を消す */
     color: #333; /* テキストカラーを設定 */
     font-weight: bold; /* テキストを太字に */
     transition: color 0.3s ease; /* ホバー時の色変更をなめらかに */
   }
-  
+ 
   .navItems li a:hover {
     color: #ff6600; /* ホバー時にオレンジ色に変更 */
   }
-  
-  
+  .orangeLink {
+    color: orange !important;
+}
   /* ヒーローセクション */
   .hero {
     margin-top: 68px;
@@ -580,3 +580,32 @@
     background: #f9f9f9; /* 回答部分の背景色を柔らかく */
     transition: max-height 0.3s ease, opacity 0.3s ease;
   }
+
+  .fixedContainer {
+    position: fixed; /* 要素を固定 */
+    top: 50%; /* 画面の中央あたりに配置 */
+    right: 0; /* 画面の右端に配置 */
+    transform: translateY(-50%); /* 縦方向の中央揃え */
+    z-index: 1000; /* 他の要素の上に表示されるようにする */
+    max-width: 100vw; /* 画面幅を超えないようにする */
+}
+
+.fixedItem {
+    background-color: #2d2dff; /* 背景色（青） */
+    color: white; /* テキスト色を白に */
+    padding: 10px 10px; /* 内側の余白 */
+    border-radius: 5px 0 0 5px; /* 左端を丸く */
+    text-align: center; /* テキスト中央揃え */
+    font-size: 16px; /* フォントサイズ */
+    font-weight: bold; /* 太字 */
+    text-decoration: none; /* リンクの下線を消す */
+    writing-mode: vertical-rl; /* 縦書きに変更 */
+    max-width: 40px; /* 幅をスマホで適切に調整 */
+    overflow: hidden; /* はみ出し防止 */
+    word-break: break-word; /* テキストを折り返す */
+}
+
+.fixedItem:hover {
+    background-color: #1a1aff; /* ホバー時の背景色 */
+    transition: background-color 0.3s ease; /* 色の変更をスムーズに */
+}

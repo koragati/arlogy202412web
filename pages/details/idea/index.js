@@ -14,9 +14,15 @@ export default function AboutArlogy() {
             />
           </div>
           <ul className={styles.navItems}>
-            <li><a href="/">TOP</a></li>
-            <li><a href="/details/idea">理念</a></li>
-            <li><a href="/details/contact">お問い合わせ</a></li>
+          <li>
+                <a href="/">TOP</a>
+            </li>
+            <li>
+                <a href="/details/idea"  className={styles.orangeLink}>理念</a>
+            </li>
+            <li>
+                <a href="/details/contact">お問い合わせ</a>
+            </li>
           </ul>
         </nav>
       </header>
