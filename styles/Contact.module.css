@@ -1,0 +1,222 @@
+.main{
+    background-color: white;
+    padding: 24px;
+  }
+  
+  .main h1{
+    color: black;
+    font-family: 'Noto Serif JP', serif;
+    margin-bottom: 20px;
+    font-size: 40px;
+  }
+  .main h2{
+    color: black;
+    font-family: 'Noto Serif JP', serif;
+    margin-bottom: 8px;
+    font-size: 40px;
+  }
+  .enter {
+    background-color: #f9f9f9; /* 背景色を柔らかい色に設定 */
+    border-left: 4px solid #003366; /* 左側に青いラインを追加 */
+    padding: 15px; /* コンテンツの周囲に余白を追加 */
+    margin-bottom: 20px; /* 下に余白を追加してセクションを区切る */
+  }
+  
+  .enter p:first-child {
+    font-size: 18px; /* 最初の段落のフォントサイズを大きくする */
+    font-weight: bold; /* 太字にする */
+    color: #333; /* テキストの色を濃いグレーにする */
+    margin-bottom: 10px; /* 下に少し余白を追加 */
+  }
+  
+  .enter p {
+    font-size: 16px; /* 残りの段落のフォントサイズを標準的にする */
+    line-height: 1.6; /* 行間を少し広げて読みやすくする */
+    color: #555; /* テキストの色を少し薄くする */
+  }
+  
+  .enter:last-child p {
+    font-style: italic; /* 最後のセクションのテキストを斜体にする（任意） */
+  }
+  .policy{
+    margin-bottom: 30px;
+  }
+  
+  .contact{
+    color:black;
+    margin-bottom: 40px;
+  }
+  
+  .contact a{
+    color:#003366;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+  }
+  .click{
+    padding:8px;
+    border-radius: 30px;
+    background-color: #003366;
+  }
+  .click a{
+    color: white;
+  }
+  .policy a{
+    font-size:16px;
+    background-color: white;
+  }
+  
+  .contact p{
+    font-family: 'Zen Maru Gothic', sans-serif;
+  }
+  /* .time1{
+    margin-top:10px;
+    color:black;
+    margin-bottom:50px;
+  } */
+  
+  .input[type="radio"] {
+    appearance: none;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .input[type="radio"]:checked::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #0070f3;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+  }
+  .radioGroup {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+  }
+  
+  /* .radioButton {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    color: #000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  } */
+  .radioButton {
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    color: #000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: block;
+    margin-bottom: 0; /* ボタンと下のテキストの間に余分なスペースを入れない */
+    position: relative; /* 下部を伸ばすためのベース */
+    font-family: 'Zen Maru Gothic', sans-serif;
+  }
+  
+  .radioButtonChecked {
+    background-color: #003366;
+    color: white;
+  }
+  
+  .radioButtonChecked::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* 下に伸ばす */
+    left: 0;
+    right: 0;
+    height: 15px; /* 下の伸びる部分の高さ */
+    background-color: #003366; /* 選択されたボタンの色に一致させる */
+    /* border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; */
+  }
+  
+  
+  .radioInput {
+    display: none;
+  }
+  
+  .flowdescription {
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #f8f9fa; /* 背景色を追加 */
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius:5px; /* ボックスの角を丸く */
+    border: 1px solid #003366; /* 薄いボーダーを追加 */
+    font-family: Arial, sans-serif; /* フォントファミリー */
+    font-size: 16px; /* フォントサイズ */
+    color: #333; /* テキストカラー */
+    transition: opacity 0.3s ease; /* スムーズな変化 */
+    font-family: 'Zen Maru Gothic', sans-serif;
+  }
+  
+  .flowdescription p {
+    margin: 0;
+  }
+  
+  .flowdescription.fade-enter {
+    opacity: 0;
+  }
+  
+  .flowdescription.fade-enter-active {
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+  }
+  .scrollArrow {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: yellow;
+    color: red;
+    padding: 7px 7px;
+    border-radius: 40%;
+    font-size: 12px;
+    display: grid;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    z-index: 1000; /* 他の要素より前に表示 */
+    opacity: 0.6;
+    animation: fadeInOut 5s infinite, scaleUpDown 4s infinite;
+    font-family: 'Zen Maru Gothic', sans-serif;
+  }
+  .scrollArrow:hover {
+    background-color: rgb(178, 178, 25);
+    opacity: 1;
+  }
+  .hoverlogo{
+    margin-top: -75px;
+    font-size: 40px;
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 100;
+  }
+  @keyframes scaleUpDown {
+    0% {
+      transform: scale(1); /* 元のサイズ */
+    }
+    50% {
+      transform: scale(1.2); /* 1.1倍に拡大 */
+    }
+    100% {
+      transform: scale(1); /* 元のサイズに戻る */
+    }
+  }
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.6;
+    }
+  }

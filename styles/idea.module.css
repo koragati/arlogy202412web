@@ -1,0 +1,139 @@
+.header {
+    position: fixed; /* 画面の上部に固定 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff; /* 背景色を白に設定 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 下に軽い影を追加 */
+    z-index: 1000; /* 他の要素の上に配置 */
+    margin-bottom: 0px;
+  }
+  
+  .navbar {
+    display: flex; /* フレックスボックスで配置 */
+    justify-content: space-between; /* 左右に要素を分ける */
+    align-items: center; /* 縦方向を中央揃え */
+    padding: 0px 0px; /* ナビゲーションの余白を調整 */
+  }
+  
+  .logo img {
+     /* ロゴの高さを制限 */
+    object-fit: contain; /* 画像のアスペクト比を保つ */
+  }
+  
+  .navLinks {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+  
+  .navLinks li a {
+    font-size: 16px;
+    color: white;
+    transition: color 0.3s ease;
+  }
+  
+  .navLinks li a:hover {
+    color: #ffd700; /* ゴールド */
+  }
+
+  .navItems {
+    display: flex; /* 横並びにする */
+    gap: 20px; /* 項目間にスペースを設ける */
+    list-style: none; /* 点や数字を消す */
+    margin: 0; /* 外側の余白を消す */
+    padding: 0; /* 内側の余白を消す */
+  }
+  
+  .navItems li a {
+    text-decoration: none; /* リンクの下線を消す */
+    color: #333; /* テキストカラーを設定 */
+    font-weight: bold; /* テキストを太字に */
+    transition: color 0.3s ease; /* ホバー時の色変更をなめらかに */
+  }
+  
+  .navItems li a:hover {
+    color: #ff6600; /* ホバー時にオレンジ色に変更 */
+  }
+  
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .section {
+    margin-top: 68px;
+    margin-bottom: 40px;
+  }
+  
+  .sectionTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #003366; /* アルロジーのイメージカラー（オレンジ系） */
+    border-bottom: 2px solid #003366;
+    padding-bottom: 4px;
+  }
+  
+  .sectionContent {
+    margin-top: 10px;
+  }
+  
+  .sectionContent p {
+    margin-bottom: 16px;
+    text-align: justify;
+  }
+  
+  .sectionList {
+    list-style-type: decimal;
+    margin-left: 20px;
+  }
+  
+  .sectionList li {
+    margin-bottom: 8px;
+    font-size: 18px;
+  }
+  
+  .intro {
+    background-color: #fff4cc;
+    padding: 20px;
+    border-left: 5px solid #003366;
+    border-radius: 4px;
+  }
+  
+  .list {
+    background-color: #fff4cc;
+    padding: 20px;
+    border-left: 5px solid #003366;
+    border-radius: 4px;
+  }
+  
+  .conclusion {
+    background-color: #fff4cc;
+    padding: 20px;
+    border-left: 5px solid #003366;
+    border-radius: 4px;
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .sectionTitle {
+      font-size: 20px;
+    }
+  
+    .sectionContent p,
+    .sectionList li {
+      font-size: 16px;
+    }
+  }
+  

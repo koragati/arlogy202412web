@@ -1,0 +1,202 @@
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: white;
+  }
+  .promoBanner {
+    background-color: #ffeb3b;
+    color: #d32f2f;
+    font-weight: bold;
+    padding: 8px;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    border: 1px solid #d32f2f;
+    font-family: 'Noto Serif JP', serif;
+  }
+  .promoBanner p{
+    font-size: 22px;
+  }
+.pageContainer a{
+  color:#66193d;
+}
+  .del{
+    color:black;
+  }
+  
+  .heading {
+    font-size: 2.5rem;
+   
+    color: #333;
+    text-align: center;
+    font-family: 'Noto Serif JP', serif;
+  }
+  .heading1 {
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+    font-family: 'Noto Serif JP', serif;
+    margin-bottom:2rem ;
+  }
+  .limit{
+    font-size: 16px;
+  }
+  .cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+    font-family: 'Noto Serif JP', serif;
+  }
+  
+  .card .price {
+    font-size: 1.0rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    color: #696969;
+  }
+  
+  .card .description {
+    font-size: 1rem;
+    margin: 1rem 0;
+    color: #666;
+  }
+  
+  .card ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  
+  .card ul li {
+    margin-bottom: 0.5rem;
+    font-size: 20pxpx;
+    color: #333;
+  }
+  
+  .card .button {
+    background-color: #66193d;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .card .button:hover {
+    background-color: #420723;
+  }
+
+  .limitedOffer {
+    color: #d32f2f;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+
+  .price{
+    font-family: 'Zen Maru Gothic', sans-serif;
+  }
+
+  .scrollArrow {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: yellow;
+    color: red;
+    padding: 7px 7px;
+    border-radius: 40%;
+    font-size: 12px;
+    display: grid;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    z-index: 1000; /* 他の要素より前に表示 */
+    opacity: 0.6;
+    animation: fadeInOut 5s infinite, scaleUpDown 4s infinite;
+    font-family: 'Zen Maru Gothic', sans-serif;
+  }
+  @keyframes scaleUpDown {
+    0% {
+      transform: scale(1); /* 元のサイズ */
+    }
+    50% {
+      transform: scale(1.2); /* 1.1倍に拡大 */
+    }
+    100% {
+      transform: scale(1); /* 元のサイズに戻る */
+    }
+  }
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.6;
+    }
+  }
+  .scrollArrow:hover {
+    background-color: rgb(178, 178, 25);
+    opacity: 1;
+  }
+  .pricingTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    font-family: 'Zen Maru Gothic', sans-serif;
+  }
+  
+  .pricingTable th, .pricingTable td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .pricingTable td {
+    background-color: #fff;
+    color:black;
+  }
+  
+  .pricingTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  .red {
+    background-color: #66193d;
+    color: white;
+  }
+  .enfprice{
+    font-size: 32px;
+    color:#66193d
+  }
+  .enfprice1{
+    font-size: 24px;
+    color:#202020
+  }
+
+ 

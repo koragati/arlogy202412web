@@ -1,0 +1,845 @@
+.all{
+    background-color: white;
+}
+.header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px; 
+    width:100%;
+    z-index: 1000;
+    background: linear-gradient(
+        to bottom, 
+        #a05f80, 
+        #66193d  
+    );
+    font-family: 'Noto Serif JP', serif;
+  }
+  
+  
+  .header img {
+    text-align: left;
+    margin-right: 20px; /* 画像とテキストの間にスペースを追加 */
+    position:absolute;
+    left: -50px;
+  }
+
+  
+  .header t2 {
+    font-size: 16px; /* フォントサイズを調整 */
+    font-weight: bold; /* 太字に設定 */
+    color: #333; /* テキストの色を設定 */
+    margin-left: 0px; /* テキストと次のテキストの間にスペースを追加 */
+  }
+  
+  .header t1 {
+    font-size: 8px; /* フォントサイズを調整 */
+    color: #666; /* テキストの色を設定 */
+  }
+.slideshowContainer {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+  
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0; /* 左端に位置 */
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(100%); /* 右に待機 */
+    transition: opacity 1s ease, transform 0s ease;
+    background-repeat: no-repeat;
+    background-size: cover; /* 画像のサイズを調整 */
+    background-position: center; /* 画像の位置を調整 */
+  }
+  .slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle, 
+      rgba(0, 0, 0, 0.6), 
+      rgba(0, 0, 0, 0) 70%
+    );
+    pointer-events: none; /* クリックなどのイベントを無視 */
+    z-index: 1; /* 他の要素よりも前面に配置 */
+}
+  .slide::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%; /* グラデーションの高さを調整 */
+    background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)); /* 白から透明へのグラデーション */
+    pointer-events: none; /* クリックなどのイベントを無視 */
+  }
+
+  .slide.active {
+    opacity: 1;
+    transform: translateX(0%); /* 画面中央 */
+  }
+  
+  .slide.entering {
+    opacity: 1;
+    transform: translateX(0%); /* 画面中央 */
+  }
+  
+  .slide.exiting {
+    opacity: 0;
+    transform: translateX(-100%); /* 左にスライドアウト */
+  }
+  
+  .title {
+    font-family: 'Noto Serif JP', serif;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -25%);
+        font-size: 24px;
+        font-weight: 700;
+        color: white;
+        /* text-align: center; */
+        white-space: nowrap; /* 改行を防ぐ */
+        /* padding: 30px 20px; */
+        /* border-radius: 8px; */
+    }
+    .topic {
+      position: relative;
+      overflow: hidden;
+      font-family: 'Noto Serif JP', serif;
+      background: linear-gradient(
+        to bottom left, 
+        white, 
+        white  
+    );
+        padding: 16px;
+        /* border-radius: 8px; */
+        /* margin: 24px 0; */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      
+      .topic h2 {
+        font-size: 32px;
+        margin-bottom: 16px;
+        color:white;
+        background: linear-gradient(
+        to left, 
+        #a24d75, 
+        #66193d  
+    );
+    /* background:radial-gradient( #66193d,#d0c5cb); */
+      }
+    
+      
+      .topic ul {
+        list-style-type: none; /* デフォルトのリストマーカーを非表示にします */
+        padding-left: 20px; /* リストマーカーの代わりにスペースを追加します */
+        background-color: #f5f5f5;
+
+      }
+      
+      /* .topic ul li {
+        margin-bottom: 10px;
+      }
+       */
+      .topic ul li a {
+        font-size: 20px;
+        color: #3498db;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-family: 'Klee One', sans-serif; 
+        margin-left: -8px;
+      }
+      
+      .topic ul li a:hover {
+        color: #2c3e50;
+      }
+
+      .topic ul li::before {
+        content: '•'; /* リストマーカーとして「・」を設定します */
+        color:  #333;; /* リストマーカーの色を指定します */
+        font-weight: bold; /* リストマーカーの太さを調整します（オプション） */
+        display: inline-block;
+        width: 20px; /* リストマーカーとテキストの間にスペースを追加します */
+    }
+    /* .topic::before {
+      content: "";
+      position: absolute;
+      left: -10%;
+      width: 100px;
+      height: 100px;
+      background-color: rgba(102, 25, 61, 0.7); 
+      
+      animation: moveShape 5s linear infinite; 
+  } */
+  @keyframes moveShape {
+    0% {
+        left: -10%;
+    }
+    50% {
+        left: 50%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+  .logo{
+    margin-top: 24px;
+        display: flex;
+        justify-content: center; /* 水平方向に中央に配置 */
+        align-items: center; /* 垂直方向に中央に配置 */
+        margin-bottom:24px;
+  }
+  @keyframes rotate {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+  .developmentview {
+     /* Aligns the content inside the div to the right */
+     margin-bottom: -50px;
+  }
+  .rotate1 {
+    /* animation: rotate 50s linear infinite; */
+    margin-left: -20px;
+  }
+  .developmentview1 {
+    text-align: right;
+     /* Aligns the content inside the div to the right */
+     margin-top: -50px;
+  }
+  .rotate2 {
+    /* animation: rotate 50s linear infinite; */
+    margin-right: -30px;
+  }
+  .intro {
+    padding: 16px;
+    background: linear-gradient(
+      to bottom left, 
+      white, 
+      white  
+  );
+    /* border-radius: 12px; */
+    max-width: 900px;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    line-height: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 0px;
+  }
+  .introtitle {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 24px;
+    padding: 6px;
+    line-height: 40px;
+    font-family: 'Noto Serif JP', serif;
+    background: linear-gradient(
+        to left, 
+        #a24d75, 
+        #66193d  
+    );
+  }
+  .introimg{
+    margin-bottom: 8px;
+  }
+
+  .introimg img{
+    height:200px;
+    width:100%;
+    opacity:0.9;
+    margin-top: -20px;
+    padding: 0px;
+  }
+
+  .introimg p{
+    color:black;
+    margin-top:-50px;
+    padding: 16px;
+  }
+
+  .introimg p img{
+    width:24px;
+    height:24px;
+    margin-top:8px;
+    border-radius: 50%;
+    margin-right: 4px;
+  }
+  
+  .introdetails {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+    /* margin-bottom: 24px; */
+    /* margin-top: -50px; */
+  }
+  .introdetails h2{
+    font-family: 'Noto Serif JP', serif;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    margin-left: 8px;
+    color: #66193d;
+    font-size: 32px;
+  }
+  .introdetails pp{
+    /* margin-bottom: 40px; */
+    font-size: 24px;
+    font-weight:700;
+  }
+  
+  .section {
+    background-color: white;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .section p {
+    text-align: justify;
+  }
+
+  .prepricedes{
+      display: flex;
+      margin-top:-30px; 
+  }
+  .section2 {
+    margin-top:-30px;
+    background: white;
+    padding: 16px;
+    max-width: 900px;
+    /* margin: 40px auto; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* font-family: 'Roboto', Arial, sans-serif; */
+    line-height: 1.7;
+    /* text-align: center; セクション全体を中央揃え */
+    font-family: 'Zen Maru Gothic', sans-serif;
+    margin-bottom: 0px;
+}
+
+.section2 h1{
+  font-size: 32px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 24px;
+    padding: 6px;
+    line-height: 40px;
+    text-align: left;
+    font-family: 'Noto Serif JP', serif;
+    background: linear-gradient(
+        to left, 
+        #a24d75, 
+        #66193d  
+    );
+}
+
+
+
+.section2 .grid {
+    display: flex;
+    justify-content: space-between; /* グリッド内のアイテムを左右に分散 */
+    /* gap: 1000px; */
+    flex-wrap: wrap; /* 小さな画面では折り返す */
+}
+
+.section2 .card {
+    background: #ffffff; /* 各カードに白い背景を追加 */
+    padding: 24px;
+    /* border-radius: 8px; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1; /* 各カードが同じ幅になるように設定 */
+    text-align: left; /* カード内のテキストを左揃え */
+    margin-bottom: 32px;
+    /* border-radius: 20px; */
+}
+
+.section2 .card:hover {
+    transform: translateY(-5px); /* ホバー時にカードを少し上げる */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.section2 .card h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.section2 .card p {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+}
+
+.section2 .card span {
+    color: #2e8b57; /* 矢印部分にアクセントカラーを適用 */
+    font-weight: bold;
+}
+.intro1{
+  margin-top:0px;
+  padding:16px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.teacher {
+    margin-top: -30px;
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    /* margin-bottom: 24px; */
+    padding: 6px;
+    line-height: 40px;
+    background: linear-gradient(
+        to left, 
+        #a24d75, 
+        #66193d  
+    );
+    font-family: 'Noto Serif JP', serif;
+}
+
+
+.slider2 {
+  margin-top: 16px;
+  position: relative;
+  width: 100%;
+  height: 400px; /* スライドショーの高さを設定 */
+  overflow: hidden;
+  background-color: black;
+  /* border-radius: 16px; */
+}
+
+.slide1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(1) translateX(100%);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide1 img {
+  width: 100%; /* 画像のサイズを調整 */
+  height: 100%; /* 高さを自動で調整 */
+  object-fit: cover;
+  /* border-radius: 20px; */
+}
+
+.slide1.active {
+  opacity: 1;
+  transform: scale(1) translateX(0%);
+}
+
+.slide1.prev {
+  opacity: 0;
+  transform: scale(0.6) translateX(-100%);
+}
+
+.slide1.next {
+  opacity: 0;
+  transform: scale(0.6) translateX(100%);
+}
+.slider2 .textContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(
+        to left, 
+        #a24d75, 
+        #66193d  
+    );
+  padding: 16px;
+  box-sizing: border-box; /* パディングを含む幅の設定 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px; */
+}
+
+.slider2 .description {
+  color: white;
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255,0.8); /* 説明とメモの間に線を追加 */
+  width: 100%;
+  text-align: center;
+}
+
+.slider2.memo {
+  color: white;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+}
+.prevButton, .nextButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #2e8b57;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prevButton {
+  left: 16px;
+  border-radius: 100%;
+}
+
+.nextButton {
+  right: 16px;
+  border-radius: 100%;
+}
+.tamura4{
+  margin-left: -26px;
+  margin-right: -26px;
+  animation: rotate 50s linear infinite;
+    margin-top: -5px;
+    opacity: 0.1;
+}
+.tamura5{
+  margin-left: -26px;
+  margin-right: -26px;
+  transform: rotate(-15deg);
+  margin-top: -5px;
+  opacity: 0.3;
+}
+.tamura6{
+  margin-left: -26px;
+  margin-right: -26px;
+  animation: rotate 50s linear infinite;
+    margin-top: -5px;
+    opacity: 0.5;
+}
+.tamura7{
+  margin-left: -26px;
+  margin-right: -26px;
+    margin-top: -5px;
+    transform: rotate(-15deg);
+    opacity: 0.6;
+}
+.faqSection {
+  margin-top: -24px;
+    /* margin: 50px auto; */
+    padding: 16px;
+    max-width: 800px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.faqSection h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    color: white;
+    font-family: 'Noto Serif JP', serif;
+    background: linear-gradient(
+        to left, 
+        #a24d75, 
+        #66193d  
+    );
+}
+.faqItem {
+    margin-bottom: 24px;
+}
+
+.faqQuestion {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    padding: 6px;
+    background: #ffffff;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    /* border-radius: 20px; */
+}
+
+.faqQuestion:hover {
+    background: #e0e4e8;
+}
+
+.faqIcon {
+    font-size: 24px;
+    color: #2e8b57;
+}
+
+.faqAnswer {
+    /* margin-top: 10px; */
+    padding: 15px;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    color: #333;
+    font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+.scrollArrow {
+    position: fixed;
+    bottom: 58px;
+    right: 20px;
+    background-color: yellow;
+    color: red;
+    padding: 7px 7px;
+    border-radius: 40%;
+    font-size: 12px;
+    display: grid;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    z-index: 1000; /* 他の要素より前に表示 */
+    opacity: 0.6;
+    animation: fadeInOut 5s infinite, scaleUpDown 4s infinite;
+    font-family: 'Zen Maru Gothic', sans-serif;
+  }
+  @keyframes scaleUpDown {
+    0% {
+      transform: scale(1); /* 元のサイズ */
+    }
+    50% {
+      transform: scale(1.2); /* 1.1倍に拡大 */
+    }
+    100% {
+      transform: scale(1); /* 元のサイズに戻る */
+    }
+  }
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.6;
+    }
+  }
+  .scrollArrow:hover {
+    background-color: rgb(178, 178, 25);
+    opacity: 1;
+  }
+  
+  .scrollArrow1 {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgb(68, 62, 62);
+    color: white;
+    padding: 5px 5px;
+    border-radius: 40%;
+    font-size: 15px;
+    display: grid;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    z-index: 1000; /* 他の要素より前に表示 */
+    opacity: 0.8;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    margin-bottom: 0px;
+  }
+  
+  .scrollArrow1:hover {
+    background-color: rgb(117, 110, 110);
+    opacity: 1;
+  }
+  .scrollArrow2 {
+    position: fixed;
+    bottom: 145px;
+    right: 20px;
+    background-color: rgb(68, 62, 62);
+    color: white;
+    padding: 5px 5px;
+    border-radius: 40%;
+    font-size: 15px;
+    display: grid;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    z-index: 1000; /* 他の要素より前に表示 */
+    opacity: 0.8;
+    font-family: 'Zen Maru Gothic', sans-serif;
+
+  }
+  
+  .scrollArrow2:hover {
+    background-color: rgb(117, 110, 110);
+    opacity: 1;
+  }
+  .freeallow{
+    display: grid;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column; /* 縦方向に要素を配置 */
+    justify-content: center;
+    align-items: center;
+    /* padding: 10px 20px;  */
+    background-color: white; /* 背景色 */
+    border-top: 2px solid #444; /* 上部のボーダー */
+    text-align: center;
+  }
+  
+  .footer img {
+    height: auto; /* 縦横比を保ちながら高さを自動調整 */
+    margin-bottom: 0px; /* 画像とテキストの間隔を詰める */
+   
+  }
+  
+  .footerText {
+    font-size: 24px; /* テキストサイズを少し小さく調整 */
+    font-weight: bold; /* 太字 */
+    color: #333; /* テキストの色 */
+    font-family: 'Noto Serif JP', serif; /* フォント */
+    margin-top:0 px; /* テキストと画像の間隔を微調整 */
+    margin-bottom: 10px;
+
+  }
+  .footer a{
+    color:#66193d;
+    margin-bottom: 0px;
+  }
+  .footer p{
+    font-size: 18px; /* テキストサイズを少し小さく調整 */
+    font-weight: bold; /* 太字 */
+    color: #333; /* テキストの色 */
+    font-family: 'Noto Serif JP', serif; /* フォント */
+  }
+.topic ul li a {
+  font-size: 20px;
+  color: #2e8b57; /* リンクを緑に変更 */
+}
+
+.topic ul li a:hover {
+  color: #bd6e14; /* ホバー時の色も変更 */
+}
+.header {
+  position: fixed;
+  background-color: #66193d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header img {
+  margin-right: 0px;
+}
+
+.header t2 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  margin-right: 0px;
+}
+
+.header t1 {
+  font-size: 8px;
+  color: #ccc;
+}
+.logoOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: white;
+  z-index: 10000;
+  opacity: 1;
+  transition: opacity 1s ease-in-out; /* アニメーションの設定 */
+  pointer-events: none;
+  color:black;
+}
+.hoverlogo{
+  margin-top: -75px;
+  font-size: 40px;
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 100;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.underline {
+  text-decoration: underline;
+  text-decoration-color: #2e8b57; /* アンダーラインの色を指定 */
+  text-decoration-style: wavy;
+}
+.thin{
+  opacity: 0.6;
+  font-size: 12px;
+}
+.hoverlogo {
+  margin-top: 0px;
+  animation: fadeIn 2s ease-in-out;
+  margin-bottom:100px ; /* ページが読み込まれたときにフェードイン */
+  font-size: 24px;
+}
+
+.hoverlogo1{
+  animation: fadeIn 3s ease-in-out; /* ページが読み込まれたときにフェードイン */
+  font-family: 'Noto Serif JP', serif;
+}
+
+.logoOverlay img {
+  max-width: 100%;                 /* 画像の最大幅を100%に設定（画面に合わせて縮小） */
+  margin-top: 0px;
+  margin-top:-100px;
+  align-items: center; 
+  text-align: center;
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+.section a{
+  color: #2e8b57;
+}
+.introimg a{
+  color: #2e8b57;
+}
+
+
+.header a {
+  color: #ffd700; /* リンクの色 */
+  font-size: 10px; /* リンクのフォントサイズを大きめに */
+  text-decoration: none; /* 下線を削除 */
+  font-weight: bold; /* リンクの太さを強調 */
+  padding: 10px 20px; /* リンク内の余白 */
+  border-radius: 5px; /* 角を丸くする */
+  transition: background-color 0.3s ease; /* 背景色の変化にアニメーション */
+}
+
+/* ホバー時のリンクのスタイル */
+.header a:hover {
+  background-color: #ffd700; /* 背景色をゴールドに変更 */
+  color: #4b1c4e; /* テキスト色を背景と調和する色に変更 */
+}
