@@ -585,24 +585,23 @@
     position: fixed; /* 要素を固定 */
     top: 50%; /* 画面の中央あたりに配置 */
     right: 0; /* 画面の右端に配置 */
-    transform: translateY(-50%); /* 縦方向の中央揃え */
+    /* transform: translateY(-50%);  */
     z-index: 1000; /* 他の要素の上に表示されるようにする */
-    max-width: 100vw; /* 画面幅を超えないようにする */
+    max-width: 100%; /* 画面幅を超えないようにする */
+    overflow: hidden; /* 横スクロールを防ぐ */
 }
-
 .fixedItem {
-    background-color: #2d2dff; /* 背景色（青） */
-    color: white; /* テキスト色を白に */
-    padding: 10px 10px; /* 内側の余白 */
-    border-radius: 5px 0 0 5px; /* 左端を丸く */
-    text-align: center; /* テキスト中央揃え */
-    font-size: 16px; /* フォントサイズ */
-    font-weight: bold; /* 太字 */
-    text-decoration: none; /* リンクの下線を消す */
-    writing-mode: vertical-rl; /* 縦書きに変更 */
-    max-width: 40px; /* 幅をスマホで適切に調整 */
-    overflow: hidden; /* はみ出し防止 */
-    word-break: break-word; /* テキストを折り返す */
+  background-color: #2d2dff; /* 背景色（青） */
+  color: white; /* テキスト色を白に */
+  padding: 10px 20px; /* 内側の余白 */
+  border-radius: 5px 0 0 5px; /* 左端を丸く */
+  text-align: center; /* テキスト中央揃え */
+  font-size: 16px; /* フォントサイズ */
+  font-weight: bold; /* 太字 */
+  text-decoration: none; /* リンクの下線を消す */
+  width: auto; /* 幅を自動調整 */
+  height: auto; /* 高さを自動調整 */
+  display: block; /* ボックス化して整列 */
 }
 
 .fixedItem:hover {

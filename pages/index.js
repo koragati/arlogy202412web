@@ -431,7 +431,7 @@ export default function Home() {
 {showArrow && (
 <div className={styles.fixedContainer}>
             <div className={styles.fixedItem}>
-                <a href="/details/contact">💬　無料受験相談</a>
+                <a href="/details/contact">💬<br/>無<br/>料<br/>受<br/>験<br/>相<br/>談</a>
             </div>
         </div>
            )}
