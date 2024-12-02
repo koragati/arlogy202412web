@@ -21,6 +21,9 @@ export default function AboutArlogy() {
                 <a href="/details/idea"  className={styles.orangeLink}>理念</a>
             </li>
             <li>
+                <a href="/details/price">料金</a>
+            </li>
+            <li>
                 <a href="/details/contact">お問い合わせ</a>
             </li>
           </ul>

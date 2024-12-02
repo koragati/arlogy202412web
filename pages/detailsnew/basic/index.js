@@ -67,6 +67,11 @@ export default function Home() {
             </article>
           </section>
         </main>
+        <div className={styles.fixedContainer}>
+            <div className={styles.fixedItem}>
+                <a href="/details/contact">💬<br/>無<br/>料<br/>体<br/>験<br/>相<br/>談</a>
+            </div>
+        </div>
       </div>
     );
   }

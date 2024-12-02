@@ -130,9 +130,9 @@ export default function Pricing() {
         <p>
           制定日:2024年10月5日
         </p>
-      <div className={styles.scrollArrow} onClick={scrollToBottom1}>
-              <div>TOPへ<br/>戻る</div>
-            </div>
+        <a href="/" className={styles.floatingButton}>
+        TOPへ<br/>戻る
+      </a>
     </div>
   );
 }

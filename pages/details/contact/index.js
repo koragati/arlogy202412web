@@ -33,6 +33,9 @@ export default function ProfessionalRadioButton() {
                 <a href="/details/idea"  >理念</a>
             </li>
             <li>
+                <a href="/details/price">料金</a>
+            </li>
+            <li>
                 <a href="/details/contact" className={styles.orangeLink}>お問い合わせ</a>
             </li>
           </ul>
@@ -168,9 +171,9 @@ export default function ProfessionalRadioButton() {
         )}
       </div>
     </div>
-    <div className={styles.scrollArrow} onClick={scrollToBottom1}>
-              <div>TOPへ<br/>戻る</div>
-            </div>
+    <a href="/" className={styles.floatingButton}>
+        TOPへ<br/>戻る
+      </a>
     </div>
     </>
   );

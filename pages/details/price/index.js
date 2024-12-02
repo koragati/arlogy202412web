@@ -81,7 +81,33 @@ export default function Pricing() {
     router.push('/');
   };
   return (
-    
+    <>
+    <header className={styles.header}>
+        <nav className={styles.navbar}>
+          <div className={styles.logo}>
+            <img 
+              src="https://lh3.googleusercontent.com/d/18h1n-2KiEjcSf1T6XR_SzAtJkVstgiC8=s3000?authuser=0"
+              alt="Google Drive Image"
+              width="124" 
+              height="62" 
+            />
+          </div>
+          <ul className={styles.navItems}>
+          <li>
+                <a href="/">TOP</a>
+            </li>
+            <li>
+                <a href="/details/idea">理念</a>
+            </li>
+            <li>
+                <a href="/details/price" className={styles.orangeLink}>料金</a>
+            </li>
+            <li>
+                <a href="/details/contact">お問い合わせ</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
     <div className={styles.pageContainer}>
       <div className={styles.promoBanner}>
       <p>期間限定</p><p className={styles.limit}>※入塾料<del>¥10,000</del>　→無料</p>
@@ -144,9 +170,15 @@ export default function Pricing() {
           </div>
         ))}
       </div>
-      <div className={styles.scrollArrow} onClick={scrollToBottom1}>
-              <div>TOPへ<br/>戻る</div>
-            </div>
     </div>
+    <div className={styles.fixedContainer}>
+            <div className={styles.fixedItem}>
+                <a href="/details/contact">💬<br/>無<br/>料<br/>体<br/>験<br/>相<br/>談</a>
+            </div>
+        </div>
+    <a href="/" className={styles.floatingButton}>
+        TOPへ<br/>戻る
+      </a>
+    </>
   );
 }

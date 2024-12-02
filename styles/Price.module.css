@@ -1,4 +1,64 @@
+.header {
+  position: fixed; /* 画面の上部に固定 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff; /* 背景色を白に設定 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 下に軽い影を追加 */
+  z-index: 1000; /* 他の要素の上に配置 */
+  margin-bottom: 0px;
+}
+.navbar {
+  display: flex; /* フレックスボックスで配置 */
+  justify-content: space-between; /* 左右に要素を分ける */
+  align-items: center; /* 縦方向を中央揃え */
+  padding: 0px 0px; /* ナビゲーションの余白を調整 */
+}
+
+.logo img {
+   /* ロゴの高さを制限 */
+  object-fit: contain; /* 画像のアスペクト比を保つ */
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navLinks li a {
+  font-size: 16px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.navLinks li a:hover {
+  color: #ffd700; /* ゴールド */
+}
+
+.navItems {
+  display: flex; /* 横並びにする */
+  gap: 20px; /* 項目間にスペースを設ける */
+  list-style: none; /* 点や数字を消す */
+  margin: 0; /* 外側の余白を消す */
+  padding: 0; /* 内側の余白を消す */
+}
+
+.navItems li a {
+  text-decoration: none; /* リンクの下線を消す */
+  color: #333; /* テキストカラーを設定 */
+  font-weight: bold; /* テキストを太字に */
+  transition: color 0.3s ease; /* ホバー時の色変更をなめらかに */
+}
+
+.navItems li a:hover {
+  color: #ff6600; /* ホバー時にオレンジ色に変更 */
+}
+.orangeLink {
+  color: orange !important;
+}
 .pageContainer {
+  margin-top: 48px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,7 +80,7 @@
     font-size: 22px;
   }
 .pageContainer a{
-  color:#66193d;
+  color:#003366;
 }
   .del{
     color:black;
@@ -98,7 +158,7 @@
   }
   
   .card .button {
-    background-color: #66193d;
+    background-color: #003366;
     color: white;
     padding: 0.75rem 1.5rem;
     border: none;
@@ -109,7 +169,7 @@
   }
   
   .card .button:hover {
-    background-color: #420723;
+    background-color: #003366;
   }
 
   .limitedOffer {
@@ -187,16 +247,85 @@
     background-color: #f9f9f9;
   }
   .red {
-    background-color: #66193d;
+    background-color: #003366;
     color: white;
   }
   .enfprice{
     font-size: 32px;
-    color:#66193d
+    color:#e68900
   }
   .enfprice1{
     font-size: 24px;
     color:#202020
   }
 
- 
+  .floatingButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff9800; /* オレンジ色 */
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* リンクの下線を消す */
+    font-size: 12px; /* 矢印のサイズを調整 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+  
+  .floatingButton:hover {
+    background-color: #e68900; /* 濃いオレンジ */
+  }
+
+  @keyframes jump {
+    0%, 100% {
+      transform: translateY(10px); /* 元の位置 */
+    }
+    50% {
+      transform: translateY(-10px); /* 上 */
+    }
+  }
+  
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 5px #2d2dff;
+    }
+    50% {
+      box-shadow: 0 0 15px #2d2dff;
+    }
+  }
+  
+  .fixedContainer {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    z-index: 1000;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .fixedItem {
+    background: linear-gradient(to bottom, #0068cf, #003366); /* 背景色（青） */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px 0 0 5px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    line-height: 1.5;
+    animation: bounce 2s infinite, shake 2s infinite, jump 2s infinite, glow 1s infinite;
+  }
+  
+  .fixedItem:hover {
+    background-color: #1a1aff;
+    animation: none; /* ホバー中はアニメーションを停止 */
+    transition: background-color 0.3s ease;
+  }
+  

@@ -299,3 +299,27 @@
 .linkButtonBlue:hover {
     background: linear-gradient(to bottom, #003db3, #002080);
 }
+
+
+.floatingButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff9800; /* オレンジ色 */
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none; /* リンクの下線を消す */
+  font-size: 12px; /* 矢印のサイズを調整 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.floatingButton:hover {
+  background-color: #e68900; /* 濃いオレンジ */
+}

@@ -99,9 +99,9 @@ export default function Pricing() {
           その他の特別な販売条件があるサービスについては、料金ページ、又はお問い合わせページ、又はARLOGY入校時の契約書においてその条件を表示いたします。
         </p>
         <p></p><p></p>
-      <div className={styles.scrollArrow} onClick={scrollToBottom1}>
-              <div>TOPへ<br/>戻る</div>
-            </div>
+        <a href="/" className={styles.floatingButton}>
+        TOPへ<br/>戻る
+      </a>
     </div>
   );
 }

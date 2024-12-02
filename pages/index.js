@@ -138,6 +138,9 @@ export default function Home() {
                 <a href="/details/idea">理念</a>
             </li>
             <li>
+                <a href="/details/price">料金</a>
+            </li>
+            <li>
                 <a href="/details/contact">お問い合わせ</a>
             </li>
         </ul>
@@ -170,8 +173,8 @@ export default function Home() {
           </div>
           <div className={styles.feature}>
             <h3>無料体験授業実施中！</h3>
-            <p>講師がお子様のご家庭に訪問、もしくは付近の喫茶店でアルロジーの体験授業と説明を受けることができます。<br/>
-            ※お問い合わせへ！！！※</p>
+            <p>当教室でアルロジーの体験授業と説明を受けることができます。<br/>※お子様のご家庭やお近くの喫茶店での実施も可能です。
+            </p>
           </div>
         </div>
       </section>
@@ -196,6 +199,8 @@ export default function Home() {
     <p className={styles.mainHighlight1}>価値のある<br/>アクティブラーニング</p>
     <br/>
     <p>をお子様に提供することができます。</p>
+    <p>現代の詰め込み教育だけでは培えない能力を、培うことができます!!!
+    </p>
     {/* <a href="#curriculum-details" className={styles.curriculumLink}>
       思考・発見・行動サイクル詳細はこちら
     </a> */}
@@ -431,7 +436,7 @@ export default function Home() {
 {showArrow && (
 <div className={styles.fixedContainer}>
             <div className={styles.fixedItem}>
-                <a href="/details/contact">💬<br/>無<br/>料<br/>受<br/>験<br/>相<br/>談</a>
+                <a href="/details/contact">💬<br/>無<br/>料<br/>体<br/>験<br/>相<br/>談</a>
             </div>
         </div>
            )}

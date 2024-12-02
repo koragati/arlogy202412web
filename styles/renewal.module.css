@@ -581,30 +581,50 @@
     transition: max-height 0.3s ease, opacity 0.3s ease;
   }
 
+  @keyframes jump {
+    0%, 100% {
+      transform: translateY(10px); /* 元の位置 */
+    }
+    50% {
+      transform: translateY(-10px); /* 上 */
+    }
+  }
+  
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 5px #2d2dff;
+    }
+    50% {
+      box-shadow: 0 0 15px #2d2dff;
+    }
+  }
+  
   .fixedContainer {
-    position: fixed; /* 要素を固定 */
-    top: 50%; /* 画面の中央あたりに配置 */
-    right: 0; /* 画面の右端に配置 */
-    /* transform: translateY(-50%);  */
-    z-index: 1000; /* 他の要素の上に表示されるようにする */
-    max-width: 100%; /* 画面幅を超えないようにする */
-    overflow: hidden; /* 横スクロールを防ぐ */
-}
-.fixedItem {
-  background-color: #2d2dff; /* 背景色（青） */
-  color: white; /* テキスト色を白に */
-  padding: 10px 20px; /* 内側の余白 */
-  border-radius: 5px 0 0 5px; /* 左端を丸く */
-  text-align: center; /* テキスト中央揃え */
-  font-size: 16px; /* フォントサイズ */
-  font-weight: bold; /* 太字 */
-  text-decoration: none; /* リンクの下線を消す */
-  width: auto; /* 幅を自動調整 */
-  height: auto; /* 高さを自動調整 */
-  display: block; /* ボックス化して整列 */
-}
-
-.fixedItem:hover {
-    background-color: #1a1aff; /* ホバー時の背景色 */
-    transition: background-color 0.3s ease; /* 色の変更をスムーズに */
-}
+    position: fixed;
+    top: 50%;
+    right: 0;
+    z-index: 1000;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .fixedItem {
+    background: linear-gradient(to bottom, #0068cf, #003366); /* 背景色（青） */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px 0 0 5px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    line-height: 1.5;
+    animation: bounce 2s infinite, shake 2s infinite, jump 2s infinite, glow 1s infinite;
+  }
+  
+  .fixedItem:hover {
+    background-color: #1a1aff;
+    animation: none; /* ホバー中はアニメーションを停止 */
+    transition: background-color 0.3s ease;
+  }
+  

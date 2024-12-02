@@ -1,11 +1,21 @@
 .container{
     background-color: white;
 }
-.container h2{
-    color:black;
-    font-size: 32px;
-    padding: 24px;
-    font-family: 'Noto Serif JP', serif;
+.header {
+  text-align: center;
+  font-size: 48px;
+  margin: 0; /* 余白をゼロにする */
+  padding: 48px 0; /* 内側の余白を設定 */
+  background: linear-gradient(to top, #003366, #32669a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+.headerTitle {
+  font-size: 40px;
+  margin: 0;
+  font-weight: bold;
 }
 .container img{
     width:100%;
@@ -53,4 +63,91 @@
   .scrollArrow:hover {
     background-color: rgb(178, 178, 25);
     opacity: 1;
+  }
+
+  .container {
+    position: relative;
+    text-align: center;
+  }
+  
+  .imageWrapper {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .image {
+    display: block;
+    width: 100%; /* 必要に応じて幅を調整 */
+    height: auto;
+  }
+  
+  .link {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+  }
+  
+  /* 点滅のアニメーション */
+  @keyframes blink {
+    0% {
+      opacity: 1; /* 完全に表示 */
+    }
+    50% {
+      opacity: 0.2; /* 薄くする */
+    }
+    100% {
+      opacity: 1; /* 再び完全に表示 */
+    }
+  }
+  
+  /* 点滅エフェクトを適用 */
+  .blink {
+    animation: blink 5s infinite ease-in-out; /* 1.5秒で点滅を繰り返す */
+  }
+  
+  /* 上部リンク */
+  .linkTop {
+    top: 10%; /* 画像の上部10%の位置 */
+  }
+  
+  /* 中央リンク */
+  .linkMiddle {
+    top: 50%; /* 画像の中央 */
+    transform: translate(-50%, -50%); /* 完全に中央揃え */
+  }
+  
+  /* 下部リンク */
+  .linkBottom {
+    top: 90%; /* 画像の下部10%の位置 */
+  }
+
+  .floatingButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff9800; /* オレンジ色 */
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* リンクの下線を消す */
+    font-size: 12px; /* 矢印のサイズを調整 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+  
+  .floatingButton:hover {
+    background-color: #e68900; /* 濃いオレンジ */
   }
